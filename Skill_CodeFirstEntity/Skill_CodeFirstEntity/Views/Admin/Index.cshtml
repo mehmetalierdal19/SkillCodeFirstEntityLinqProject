@@ -1,0 +1,31 @@
+﻿@using Skill_CodeFirstEntity.Models.siniflar
+@model List<Yetenekler>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutNavbar.cshtml";
+}
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>YETENEK</th>
+            <th>DEĞER</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+        {
+            <tr>
+                <td>@x.ID</td>
+                <td>@x.ACIKLAMA</td>
+                <td>@x.DEGER</td>
+                <td><a href="/Admin/YetenekSil/@x.ID" class="btn btn-danger">Sil</a></td>
+                <td><a href="/Admin/YetenekGetir/@x.ID" class="btn btn-primary">Güncelle</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
